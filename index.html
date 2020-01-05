@@ -30,6 +30,7 @@
 					if (status == "error") {
 						var msg = "Error!, algo ha sucedido: ";
 						$("#capa").html(msg + xhr.status + " " + xhr.statusText);
+						$('#boton').hide();
 					}
 				});
 			});
