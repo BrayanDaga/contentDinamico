@@ -14,7 +14,6 @@
    	<input name="boton" id="boton" type="button" value="Actualizar capa" />
 	</body>
 	<script type="text/javascript">
-		$(document).ready(function() {
 		$(window).keydown(function(event){
 				if(event.keyCode == 116) {
 					if(!confirm('Quieres regresar ?')){
@@ -24,7 +23,8 @@
 					return true;
 				}
 			});
-			
+		
+		$(document).ready(function() {
 			$("#boton").click(function(event) {
 				$("#capa").load("contenido.html", function(response, status, xhr) {
 					if (status == "error") {
@@ -34,9 +34,6 @@
 					}
 				});
 			});
-
-		
-	
 		});	
 		
 	</script>
