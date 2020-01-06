@@ -1,40 +1,30 @@
 <html>
 	<head>
 		<title>jQuery Load</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 		<!-- Libreria jQuery -->
 		<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  
 		<!-- Acción sobre el botó con id=boton y actualizamos el div con id=capa -->
-	
+		<link rel="stylesheet" href="estilo.css">
+		
 	</head>
 	<body>
-		<h1>Hello World</h1>
-	<div id="capa">Pulsa 'Actualizar capa' y este texto se actualizará</div>
-	<br>
-   	<input name="boton" id="boton" type="button" value="Actualizar capa" />
+	<div class="container">
+		<h1>Test en javascript</h1>
+	
+		<div class="row text-center" id="timer">
+			
+		</div>
+		<input name="boton" id="boton" type="button" value="Actualizar capa"  class="btn btn-primary"/>
+
+		<div class="row" id="capa">Pulsa 'Actualizar capa' y este texto se actualizará</div>
+		
+	</div>
+	
 	</body>
-	<script type="text/javascript">
-		$(window).keydown(function(event){
-				if(event.keyCode == 116) {
-					if(!confirm('Quieres regresar ?')){
-						event.preventDefault();
-						return false;
-					}
-					return true;
-				}
-			});
-		
-		$(document).ready(function() {
-			$("#boton").click(function(event) {
-				$("#capa").load("contenido.html", function(response, status, xhr) {
-					if (status == "error") {
-						var msg = "Error!, algo ha sucedido: ";
-						$("#capa").html(msg + xhr.status + " " + xhr.statusText);
-						$('#boton').hide();
-					}
-				});
-			});
-		});	
-		
-	</script>
+	<script src="test.js"></script>
+	<script src="main.js"></script>
+
 </html>
