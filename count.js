@@ -30,13 +30,13 @@ function initializeClock(id, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
-      console.log('se acabo')
-    }
+    mostraResultado();
+  }
   }
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-var deadline = new Date(Date.parse(new Date()) + 01 * 01 * 01 * 10 * 1000);
+var deadline = new Date(Date.parse(new Date()) + 01 * 01 * 01 * 15 * 1000);
 initializeClock('clockdiv', deadline);
